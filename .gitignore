@@ -3,8 +3,4 @@
 .meteor/meteorite
 
 # VM
-cookbooks/
-tmp/
 .vagrant/
-Cheffile*
-Vagrantfile
