@@ -10,10 +10,27 @@ We are using Meteor as our platform of choice with Mongodb for storing data. To 
 git clone https://github.com/cjsauer/study-snap
 cd study-snap
 vagrant init /path/to/meteor-shire.box
+```
+
+Obviously replace `/path/to/meteor-shire.box` to match the correct path of the box. Edit the Vagrantfile and add the following snippet to ensure that Meteor has enough memory on the VM:
+
+```
+config.vm.provider "virtualbox" do |vb|
+  # Windows users may need to uncomment this line
+  # vb.gui = true
+
+  # Customize the amount of memory on the VM:
+  vb.memory = "2048"
+end
+```
+
+Now you can bootup the machine:
+
+```
 vagrant up
 ```
 
-Obviously replace `/path/to/meteor-shire.box` to match the correct path of the box. Now that the VM is provisioned and booted, we want to log in and start the server:
+Now that the VM is provisioned and booted, we want to log in and start the server:
 
 ```
 vagrant ssh
