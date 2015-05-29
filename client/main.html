@@ -12,10 +12,10 @@
   <div class="container">
     <div id="title">
       <a class="navbar-brand" href="#">Study Snap</a>
-    </div>
+    </div> <!-- #title -->
     <div id="search" class="input-group">
       {{> esInput index="courses" placeholder="Find a course..." }}
-    </div>
+    </div> <!-- #search -->
     <div class="list-group">
       {{#esEach index="courses"}}
         <a href="#" class="list-group-item">
@@ -23,15 +23,13 @@
           <div class="column right">{{university}}</div>
         </a>
       {{/esEach}}
-    </div>
-  </div>
+    </div> <!-- .list-group -->
+  </div> <!-- .container -->
 </nav>
 <div class="container">
-
   <div class="starter-template">
     <h1>Study Snap</h1>
     <p class="lead">A competitive, engaging, and collaborative flashcard community.</p>
   </div>
-
-</div><!-- /.container -->
+</div><!-- .container -->
 </body>
