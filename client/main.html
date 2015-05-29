@@ -9,16 +9,16 @@
 <body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
+  <div class="container">
     <a class="navbar-brand" href="#">Study Snap</a>
   </div>
-  <div>
+  <div class="container">
     {{> esInput index="courses" placeholder="Find a course..." }}
-    <ul>
+    <div class="list-group">
       {{#esEach index="courses"}}
-        <li>{{title}} : {{university}}</li>
+        <a href="#" class="list-group-item">{{title}} : {{university}}</a>
       {{/esEach}}
-    </ul>
+    </div>
   </div>
 </nav>
 <div class="container">
