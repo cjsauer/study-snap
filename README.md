@@ -42,4 +42,17 @@ Note that the Meteor server automatically watches files for changes, recompiles 
 
 Don't forget to eventually shutdown the VM. Log out of the VM, and run `vagrant halt` within the project directory. 
 ## Windows users
-Windows users can boot up the box using the VirtualBox GUI tool. Just be sure to sync your working directory with a directoy on the VM e.g. `/vagrant` as above. Once provisioned, you should be able to log into the box and start the server as above. 
+Windows users can boot up the box using the VirtualBox GUI tool. Just be sure to sync your working directory with a directoy on the VM e.g. `/vagrant` as above. Once provisioned, you should be able to log into the box and start the server as above.
+
+### Requirements
+- Git bash
+- Vagrant
+- VirtualBox
+- Patience
+
+### Fixing VirtualBox + Vagrant on Windows
+- Make sure to have Hyper-V disabled.
+- Add Git/bin to your path
+- ssh into the VM and apply [this fix](https://github.com/jakobrosenberg/Windows-Vagrant-Meteor-Symlink-Fix).
+- the meteor.sh provisioning is not necessary if you have the meteor-shire.box file.
+- cd into /vagrant and `meteor run` that bad boy
