@@ -15,15 +15,15 @@
     </div> <!-- #title -->
     <div id="search" class="input-group">
       {{> esInput index="courses" placeholder="Find a course..." }}
+      <div class="list-group">
+        {{#esEach index="courses"}}
+          <a href="#" class="list-group-item">
+            <div id="course">{{title}}</div>
+            <div id="university">{{university}}</div>
+          </a>
+        {{/esEach}}
+      </div> <!-- .list-group -->
     </div> <!-- #search -->
-    <div class="list-group">
-      {{#esEach index="courses"}}
-        <a href="#" class="list-group-item">
-          <div class="column left">{{title}}</div>
-          <div class="column right">{{university}}</div>
-        </a>
-      {{/esEach}}
-    </div> <!-- .list-group -->
   </div> <!-- .container -->
 </nav>
 <div class="container">
