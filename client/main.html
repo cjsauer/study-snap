@@ -10,14 +10,18 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">Study Snap</a>
-  </div>
-  <div class="container">
-    {{> esInput index="courses" placeholder="Find a course..." }}
-    <div class="list-group">
-      {{#esEach index="courses"}}
-        <a href="#" class="list-group-item">{{title}} : {{university}}</a>
-      {{/esEach}}
+    <div id="title">
+      <a class="navbar-brand" href="#">Study Snap</a>
+    </div>
+    <div id="search">
+      <div class="imput-group">
+        {{> esInput index="courses" placeholder="Find a course..." }}
+      </div>
+      <div class="list-group">
+        {{#esEach index="courses"}}
+          <a href="#" class="list-group-item">{{title}} : {{university}}</a>
+        {{/esEach}}
+    </div>
     </div>
   </div>
 </nav>
