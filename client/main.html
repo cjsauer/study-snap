@@ -13,18 +13,16 @@
     <div id="title">
       <a class="navbar-brand" href="#">Study Snap</a>
     </div>
-    <div id="search">
-      <div class="input-group">
-        {{> esInput index="courses" placeholder="Find a course..." }}
-      </div>
-      <div class="list-group">
-        {{#esEach index="courses"}}
-          <a href="#" class="list-group-item">
-            <div class="column left">{{title}}</div>
-            <div class="column right">{{university}}</div>
-          </a>
-        {{/esEach}}
-      </div>
+    <div id="search" class="input-group">
+      {{> esInput index="courses" placeholder="Find a course..." }}
+    </div>
+    <div class="list-group">
+      {{#esEach index="courses"}}
+        <a href="#" class="list-group-item">
+          <div class="column left">{{title}}</div>
+          <div class="column right">{{university}}</div>
+        </a>
+      {{/esEach}}
     </div>
   </div>
 </nav>
