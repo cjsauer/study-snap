@@ -10,10 +10,27 @@ We are using Meteor as our platform of choice with Mongodb for storing data. To 
 git clone https://github.com/cjsauer/study-snap
 cd study-snap
 vagrant init /path/to/meteor-shire.box
+```
+
+Obviously replace `/path/to/meteor-shire.box` to match the correct path of the box. Edit the Vagrantfile and add the following snippet to ensure that Meteor has enough memory on the VM:
+
+```
+config.vm.provider "virtualbox" do |vb|
+  # Windows users may need to uncomment this line
+  # vb.gui = true
+
+  # Customize the amount of memory on the VM:
+  vb.memory = "2048"
+end
+```
+
+Now you can bootup the machine:
+
+```
 vagrant up
 ```
 
-Obviously replace `/path/to/meteor-shire.box` to match the correct path of the box. Now that the VM is provisioned and booted, we want to log in and start the server:
+Now that the VM is provisioned and booted, we want to log in and start the server:
 
 ```
 vagrant ssh
@@ -25,4 +42,17 @@ Note that the Meteor server automatically watches files for changes, recompiles 
 
 Don't forget to eventually shutdown the VM. Log out of the VM, and run `vagrant halt` within the project directory. 
 ## Windows users
-Windows users can boot up the box using the VirtualBox GUI tool. Just be sure to sync your working directory with a directoy on the VM e.g. `/vagrant` as above. Once provisioned, you should be able to log into the box and start the server as above. 
+Windows users can boot up the box using the VirtualBox GUI tool. Just be sure to sync your working directory with a directoy on the VM e.g. `/vagrant` as above. Once provisioned, you should be able to log into the box and start the server as above.
+
+### Requirements
+- Git bash
+- Vagrant
+- VirtualBox
+- Patience
+
+### Fixing VirtualBox + Vagrant on Windows
+- Make sure to have Hyper-V disabled.
+- Add Git/bin to your path
+- ssh into the VM and apply [this fix](https://github.com/jakobrosenberg/Windows-Vagrant-Meteor-Symlink-Fix).
+- the meteor.sh provisioning is not necessary if you have the meteor-shire.box file.
+- cd into /vagrant and `meteor run` that bad boy
