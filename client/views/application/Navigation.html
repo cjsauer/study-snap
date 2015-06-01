@@ -1,0 +1,25 @@
+<template name="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+  
+      <div id="title">
+        <a class="navbar-brand" href="{{pathFor route='home'}}">Study Snap</a>
+      </div> <!-- #title -->
+  
+      <div id="search" class="input-group">
+        {{> esInput index="courses" placeholder="Find a course..." }}
+  
+        <div class="list-group">
+          {{#esEach index="courses"}}
+            <a href="{{pathFor route='courses.show'}}" class="list-group-item">
+              <div class="pull-left">{{title}}</div>
+              <div class="pull-right">{{university}}</div>
+            </a>
+          {{/esEach}}
+        </div> <!-- .list-group -->
+  
+      </div> <!-- #search -->
+  
+    </div> <!-- .container -->
+  </nav>
+</template>
