@@ -13,3 +13,4 @@ aldeed:simple-schema
 aldeed:collection2
 aldeed:autoform
 iron:router
+sacha:spin
