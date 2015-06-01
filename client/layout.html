@@ -1,0 +1,44 @@
+<template name="layout">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Study Snap</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div id="title">
+      <a class="navbar-brand" href="#">Study Snap</a>
+    </div> <!-- #title -->
+
+    <div id="search" class="input-group">
+      {{> esInput index="courses" placeholder="Find a course..." }}
+
+      <div class="list-group">
+        {{#esEach index="courses"}}
+          <a href="#" class="list-group-item">
+            <div id="course">{{title}}</div>
+            <div id="university">{{university}}</div>
+          </a>
+        {{/esEach}}
+      </div> <!-- .list-group -->
+
+    </div> <!-- #search -->
+
+  </div> <!-- .container -->
+</nav>
+
+<div class="container">
+  <div class="starter-template">
+
+    {{> yield}}
+
+  </div>
+</div><!-- .container -->
+</body>
+</template>
