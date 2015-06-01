@@ -12,8 +12,8 @@
         <div class="list-group">
           {{#esEach index="courses"}}
             <a href="{{pathFor route='courses.show'}}" class="list-group-item">
-              <div id="course">{{title}}</div>
-              <div id="university">{{university}}</div>
+              <div class="pull-left">{{title}}</div>
+              <div class="pull-right">{{university}}</div>
             </a>
           {{/esEach}}
         </div> <!-- .list-group -->
