@@ -21,7 +21,7 @@
 
       <div class="list-group">
         {{#esEach index="courses"}}
-          <a href="#" class="list-group-item">
+          <a href="{{pathFor route='courses.show'}}" class="list-group-item">
             <div id="course">{{title}}</div>
             <div id="university">{{university}}</div>
           </a>
