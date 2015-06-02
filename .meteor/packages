@@ -16,3 +16,4 @@ iron:router
 sacha:spin
 accounts-facebook
 ian:accounts-ui-bootstrap-3
+alanning:roles
