@@ -7,5 +7,4 @@ Meteor.startup(function() {
   if(Roles.getAllRoles().count() === 0) {
     Roles.createRole('user');
   }
-  console.log(Roles.getAllRoles().fetch());
 });
