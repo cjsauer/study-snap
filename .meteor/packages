@@ -14,5 +14,6 @@ aldeed:autoform
 iron:router
 sacha:spin
 accounts-facebook
-ian:accounts-ui-bootstrap-3
 alanning:roles
+service-configuration
+ian:accounts-ui-bootstrap-3
