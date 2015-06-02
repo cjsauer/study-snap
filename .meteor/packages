@@ -15,5 +15,4 @@ iron:router
 sacha:spin
 accounts-facebook
 alanning:roles
-service-configuration
 ian:accounts-ui-bootstrap-3
