@@ -1,7 +1,6 @@
 <template name="Grid">
 <div class="container" id="main">
-  <div class="row">
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-4 col-sm-12">
       <div class="well">
         <form class="form">
           <h4>Card Front</h4>
@@ -34,7 +33,7 @@
       </div>
     </div>
 
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-4 col-sm-12">
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -61,7 +60,7 @@
       </div>
     </div>
 
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-4 col-sm-12">
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -87,7 +86,6 @@
         </div>
       </div>
     </div>
-  </div><!--/row-->
 </div><!--/main-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
 type='text/javascript'></script> <script src=
@@ -100,11 +98,11 @@ $(document).ready(function() {
     /* toggle layout */
     $('#btnToggle').click(function(){
       if ($(this).hasClass('on')) {
-      $('#main .col-md-6').addClass('col-md-4').removeClass('col-md-6');
+      $('#main .col-md-12').addClass('col-md-4').removeClass('col-md-12');
       $(this).removeClass('on');
       }
       else {
-      $('#main .col-md-4').addClass('col-md-6').removeClass('col-md-4');
+      $('#main .col-md-4').addClass('col-md-12').removeClass('col-md-4');
       $(this).addClass('on');
       }
       });
