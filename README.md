@@ -1,4 +1,4 @@
-# Study Snap
+# Study Snap [![Build Status](https://travis-ci.org/cjsauer/study-snap.svg?branch=develop)](https://travis-ci.org/cjsauer/study-snap)
 
 ## Overview
 Stuy Snap is a prototype application built for the purpose of researching improvement to student effectiveness when exposed to interactive, collaborative, and competetive studying technology. At its heart, Study Snap is a community flashcard application with the ability to challenge friends in face-offs in the same vein as Trivia Crack. 
