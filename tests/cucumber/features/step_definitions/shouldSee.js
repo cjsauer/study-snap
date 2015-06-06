@@ -14,5 +14,11 @@
         getTitle().should.become(expectedTitle).and.notify(callback);
     });
 
+    this.Then(/^I should see the element "([^"]*)" with value "([^"]*)"$/, function (elementSelector, value, callback) {
+      this.browser.
+        waitForVisible(elementSelector).
+        getText(elementSelector).should.become(value).and.notify(callback);
+    });
+
   };
 })();
