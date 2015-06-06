@@ -7,5 +7,5 @@ Feature: View the homepage
   @dev
   Scenario: Guest visiting the homepage
     When I navigate to "/"
-    Then I should see the heading "Study Snap"
+    Then I should see the element "h1" with value "Study Snap"
     And  I should see the title "Study Snap"
