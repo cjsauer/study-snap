@@ -10,7 +10,8 @@
 
     this.Then(/^I should see the element "([^"]*)" with value "([^"]*)"$/, function (elementSelector, value, callback) {
       this.browser.
-        getText(elementSelector).should.become(value).and.notify(callback);
+        waitForVisible(elementSelector, 1000).
+        getText(elementSelector).should.eventually.become(value).and.notify(callback);
     });
 
   };

@@ -15,9 +15,7 @@ Feature: Course creation
   Scenario: User creates course
     Given I am logged in
     When I navigate to "/courses/new"
-    # And I fill in "university" with "Purdue University"
-    # And I fill in "title" with "CS 490"
-    # And I submit "#insertCourseForm"
-    Then I should see the element "[name=university]" with value ""
-    And I should see the element "[name=title]" with value ""
-    # These are just stubs for now! The form should redirect
+    And I fill in "university" with "Purdue University"
+    And I fill in "title" with "CS 490"
+    And I submit "#insertCourseForm"
+    Then I should see the element "h1" with value "CS 490 - Purdue University"
