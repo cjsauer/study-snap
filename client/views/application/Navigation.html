@@ -7,17 +7,7 @@
       </div> <!-- #title -->
   
       <div id="search" class="input-group">
-        {{> esInput index="courses" placeholder="Find a course..." }}
-  
-        <div class="list-group">
-          {{#esEach index="courses"}}
-            <a href="{{pathFor route='courses.show'}}" class="list-group-item">
-              <div class="pull-left">{{title}}</div>
-              <div class="pull-right">{{university}}</div>
-            </a>
-          {{/esEach}}
-        </div> <!-- .list-group -->
-  
+        {{> inputAutocomplete settings=autocompleteSettings id="courseSearch" class="input-xlarge" placeholder="Find a course..."}}
       </div> <!-- #search -->
 
       <div class="navbar-collapse collapse">
@@ -28,4 +18,9 @@
   
     </div> <!-- .container -->
   </nav>
+</template>
+
+<template name="courseResult">
+<span class="pull-left">{{title}}</span>
+<span class="pull-right">{{university}}</span>
 </template>
