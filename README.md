@@ -53,6 +53,6 @@ Windows users can boot up the box using the VirtualBox GUI tool. Just be sure to
 ### Fixing VirtualBox + Vagrant on Windows
 - Make sure to have Hyper-V disabled.
 - Add Git/bin to your path
-- ssh into the VM and apply [this fix](https://github.com/jakobrosenberg/Windows-Vagrant-Meteor-Symlink-Fix).
+- Apply [this fix](https://github.com/mitchellh/vagrant/issues/713#issuecomment-17296765) to repair windows symlinks
 - the meteor.sh provisioning is not necessary if you have the meteor-shire.box file.
 - cd into /vagrant and `meteor run` that bad boy
