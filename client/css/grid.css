@@ -48,6 +48,17 @@ textarea {
 .panel .btn i,.btn span{
   color:#666666;
 }
+.well .well-heading {
+  background-color:#ffffff;
+  font-weight:700;
+  font-size:16px;
+  color:#262626;
+  border-color:#ffffff;
+}
+.well .well-heading a {
+  font-weight:400;
+  font-size:11px;
+}
 .panel .panel-heading {
   background-color:#ffffff;
   font-weight:700;

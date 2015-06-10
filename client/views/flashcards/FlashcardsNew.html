@@ -1,21 +1,27 @@
 <template name="FlashcardsNew">
   <div class="well">
+    <div class="well-heading">
+      <a class="flip pull-right" href="#">Flip card</a>
+    </div>
     <form class="form">
-      <h4>Card Front</h4>
-
       <div class="input-group input-group-sm text-center">
         {{#autoForm id="new-card" type="insert" collection="Flashcards"}}
         <div class="form-group front {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
-          {{> afFieldInput name='front'}}
+          <h4>Card Front</h4>
+          {{> afFieldInput name='front' type="textarea"}}
           {{#if afFieldIsInvalid name='front'}}
             <span class="help-block">{{{afFieldMessage name='front'}}}</span>
           {{/if}}
         </div>
         <div class="form-group back hidden {{#if afFieldIsInvalid name='back'}}has-error{{/if}}">
-          {{> afFieldInput name='back'}}
+          <h4>Card Back</h4>
+          {{> afFieldInput name='back' type="textarea"}}
           {{#if afFieldIsInvalid name='back'}}
             <span class="help-block">{{{afFieldMessage name='back'}}}</span>
           {{/if}}
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </div>
         {{/autoForm}}
       </div>
