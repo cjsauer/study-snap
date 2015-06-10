@@ -1,25 +1,10 @@
 <template name="Grid">
   <div class="container-fluid" id="main">
     <!-- flashcard input -->
-    <div class="well">
-      <form class="form">
-        <h4>Card Front</h4>
-  
-        <div class="input-group input-group-sm text-center">
-          <input class="form-control" placeholder="Create a new card..." type=
-          "text"> <span class="input-group-btn"><button class="btn btn-primary"
-          type="button"><span class=
-          "input-group-btn">Create</span></button></span>
-        </div>
-      </form>
-    </div><!-- .well -->
+    {{> FlashcardsNew}}
   
     <!-- flashcard output -->
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <a class="pull-right" href="#">Flip card</a>
-      </div>
-    </div><!-- .panel -->
+    {{> FlashcardsShow}}
 
   </div> <!-- #main -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
