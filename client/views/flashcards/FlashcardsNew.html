@@ -4,10 +4,20 @@
       <h4>Card Front</h4>
 
       <div class="input-group input-group-sm text-center">
-        <input class="form-control" placeholder="Create a new card..." type=
-        "text"> <span class="input-group-btn"><button class="btn btn-primary"
-        type="button"><span class=
-          "input-group-btn">Create</span></button></span>
+        {{#autoForm id="new-card" type="insert" collection="Flashcards"}}
+        <div class="form-group front {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
+          {{> afFieldInput name='front'}}
+          {{#if afFieldIsInvalid name='front'}}
+            <span class="help-block">{{{afFieldMessage name='front'}}}</span>
+          {{/if}}
+        </div>
+        <div class="form-group back hidden {{#if afFieldIsInvalid name='back'}}has-error{{/if}}">
+          {{> afFieldInput name='back'}}
+          {{#if afFieldIsInvalid name='back'}}
+            <span class="help-block">{{{afFieldMessage name='back'}}}</span>
+          {{/if}}
+        </div>
+        {{/autoForm}}
       </div>
     </form>
   </div><!-- .well -->
