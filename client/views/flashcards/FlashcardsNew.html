@@ -6,23 +6,19 @@
     <form class="form">
       <div class="input-group input-group-sm text-center">
         {{#autoForm id="new-card" type="insert" collection="Flashcards"}}
-        <div class="form-group front {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
-          <h4>Card Front</h4>
-          {{> afFieldInput name='front' type="textarea"}}
-          {{#if afFieldIsInvalid name='front'}}
-            <span class="help-block">{{{afFieldMessage name='front'}}}</span>
-          {{/if}}
-        </div>
-        <div class="form-group back hidden {{#if afFieldIsInvalid name='back'}}has-error{{/if}}">
-          <h4>Card Back</h4>
-          {{> afFieldInput name='back' type="textarea"}}
-          {{#if afFieldIsInvalid name='back'}}
-            <span class="help-block">{{{afFieldMessage name='back'}}}</span>
-          {{/if}}
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
+        <fieldset>
+          <div class="form-group front {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
+            <h4>Card Front</h4>
+            {{> afFieldInput name='front' type="textarea"}}
           </div>
-        </div>
+          <div class="form-group back hidden {{#if afFieldIsInvalid name='back'}}has-error{{/if}}">
+            <h4>Card Back</h4>
+            {{> afFieldInput name='back' type="textarea"}}
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </fieldset>
         {{/autoForm}}
       </div>
     </form>
