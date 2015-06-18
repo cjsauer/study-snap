@@ -1,21 +1,19 @@
 <template name="FlashcardNew">
-<form class="form">
-  <div class="input-group input-group-sm text-center">
-    {{#autoForm id="new-card" type="insert" collection="Flashcards"}}
-    <fieldset>
-      <div class="form-group front {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
-        <h4>Card Front</h4>
-        {{> afFieldInput name='front' type="textarea"}}
+<div class="input-group input-group-sm text-center">
+  {{#autoForm id="new-card" type="insert" collection="Flashcards"}}
+  <fieldset>
+    <div class="form-group front {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
+      <h4>Card Front</h4>
+      {{> afFieldInput name='front' type="textarea"}}
+    </div>
+    <div class="form-group back hidden {{#if afFieldIsInvalid name='back'}}has-error{{/if}}">
+      <h4>Card Back</h4>
+      {{> afFieldInput name='back' type="textarea"}}
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
-      <div class="form-group back hidden {{#if afFieldIsInvalid name='back'}}has-error{{/if}}">
-        <h4>Card Back</h4>
-        {{> afFieldInput name='back' type="textarea"}}
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
-    </fieldset>
-    {{/autoForm}}
-  </div>
-</form>
+    </div>
+  </fieldset>
+  {{/autoForm}}
+</div>
 </template>

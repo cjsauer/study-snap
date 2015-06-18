@@ -1,4 +1,3 @@
-
 Flashcards.allow({
   insert: function(userId, doc) {
     return Roles.userIsInRole(userId, 'user');
