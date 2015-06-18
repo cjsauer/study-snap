@@ -1,5 +1,11 @@
 <template name="CoursesShow">
 <h1>{{title}} - {{university}}</h1>  
 <hr />
-{{> deck}}
+<div class="container-fluid" id="main">
+  {{> Flashcard isNewFlashcard=true}}
+
+  <!-- flashcard output -->
+  {{> FlashcardsList}}
+
+</div> <!-- #main -->
 </template>

@@ -1,0 +1,17 @@
+<template name="Flashcard">
+  <div class="well">
+    <div class="well-heading">
+      <a class="flip pull-right" href="#">Flip card</a>
+    </div>
+    {{#if isNewFlashcard}}
+      {{> FlashcardNew}}
+    {{else}}
+      <div class="front">
+        {{front}}
+      </div>
+      <div class="back hidden">
+        {{back}}
+      </div>
+    {{/if}}
+  </div><!-- .well -->
+</template>
