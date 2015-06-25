@@ -49,6 +49,9 @@ fieldset {
   margin-left: 10%;
   margin-right: 10%;
 }
+.well > .front, .well > .back {
+  padding-top: 15px;
+}
 .back > textarea {
   height: 95px;
 }
