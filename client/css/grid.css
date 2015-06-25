@@ -45,6 +45,10 @@ textarea {
   resize: none;
   outline: 0;
 }
+fieldset {
+  margin-left: 10%;
+  margin-right: 10%;
+}
 .back > textarea {
   height: 95px;
 }
