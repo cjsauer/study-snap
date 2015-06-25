@@ -10,8 +10,14 @@
         {{front}}
       </div>
       <div class="back hidden">
-        {{responses}}
+        {{#each responses}}
+          {{> response}}
+        {{/each}}
       </div>
     {{/if}}
   </div><!-- .well -->
+</template>
+
+<template name="response">
+  {{this.text}}
 </template>
