@@ -8,7 +8,6 @@
     </div>
     <div class="form-group back hidden {{#if afFieldIsInvalid name='responses'}}has-error{{/if}}">
       <h4>Card Back</h4>
-      {{> afFieldInput name='back' type="text" placeholder="answer"}}
       {{#afEachArrayItem name='responses'}}
         {{> afFieldInput name=this.current.text type="text" placeholder="response"}}
       {{/afEachArrayItem}}
