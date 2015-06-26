@@ -50,7 +50,8 @@ fieldset {
   margin-right: 10%;
 }
 .well > .front, .well > .back {
-  padding-top: 15px;
+  font-size: 28px;
+  padding: 40px 20px 10px;
 }
 .back > textarea {
   height: 95px;
