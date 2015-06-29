@@ -6,11 +6,12 @@
       <h4>Card Front</h4>
       {{> afFieldInput name='front' type="textarea"}}
     </div>
-    <div class="form-group back hidden {{#if afFieldIsInvalid name='responses'}}has-error{{/if}}">
+    <div class="form-group back hidden {{#if afFieldIsInvalid name='response1'}}has-error{{/if}}">
       <h4>Card Back</h4>
-      {{#afEachArrayItem name='responses'}}
-        {{> afFieldInput name=this.current.text type="text" placeholder="response"}}
-      {{/afEachArrayItem}}
+        {{> afFieldInput name="response1" type="text" placeholder="answer"}}
+        {{> afFieldInput name="response2" type="text" placeholder="response"}}
+        {{> afFieldInput name="response3" type="text" placeholder="response"}}
+        {{> afFieldInput name="response4" type="text" placeholder="response"}}
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
