@@ -8,11 +8,22 @@ Template.CoursesShow.helpers({
 });
 
 Template.CoursesShow.events({
-  'click #joinClassButton': function(event) {
+  'click #joinCourseButton': function(event) {
     event.preventDefault();
     var routerParams = Router.current().params;
     var courseID = routerParams && routerParams._id;
     Meteor.call('joinCourse', courseID, function(err, result) {
+      if(err) {
+        console.error(err);
+      }
+    });
+  },
+
+  'click #leaveCourseButton': function(event) {
+    event.preventDefault();
+    var routerParams = Router.current().params;
+    var courseID = routerParams && routerParams._id;
+    Meteor.call('leaveCourse', courseID, function(err, result) {
       if(err) {
         console.error(err);
       }
