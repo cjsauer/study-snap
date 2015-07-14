@@ -1,5 +1,12 @@
 <template name="CoursesShow">
 <h1>{{title}} - {{university}}</h1>  
+  {{#if currentUser}}
+    {{#if amStudent}}
+      <button type="button" class="btn btn-danger" id="leaveClassButton">Leave class</button>
+    {{else}}
+      <button type="button" class="btn btn-primary" id="joinClassButton">Join class</button>
+    {{/if}}
+  {{/if}}
 <hr />
 <div class="container-fluid" id="main">
 
