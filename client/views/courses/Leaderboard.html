@@ -5,17 +5,37 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Rank</th>
           <th>Name</th>
           <th>Points</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-      <tr>
-        <td colspan="4"><em>There are no students in this class!</em></td>
-      </tr>
+
+      {{#each students}}
+        {{> LeaderboardEntry}}
+      {{else}}
+        <tr>
+          <td colspan="3"><em>There are no students in this class!</em></td>
+        </tr>
+      {{/each}}
       </tbody>
     </table>
   </div>
+</template>
+
+<template name="LeaderboardEntry">
+  <tr>
+    <td>{{profile.name}}</td>
+    <td>
+      {{#if profile.score}}
+        {{profile.score}}
+      {{else}}
+        0
+      {{/if}}
+    </td>
+    <td>
+      <a class="btn btn-primary" href="#">Challenge!</a>
+    </td>
+  </tr>
 </template>
