@@ -1,22 +1,59 @@
 <template name="FlashcardNew">
 <div class="input-group input-group-sm text-center">
   {{#autoForm id="new-card" type="insert" collection="Flashcards"}}
-  <fieldset>
-    <div class="form-group front {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
+
+    <!-- Front of card -->
+    <div class="front">
       <h4>Card Front</h4>
-      {{> afFieldInput name='front' type="textarea"}}
+      <fieldset>
+        <div class="form-group {{#if afFieldIsInvalid name='front'}}has-error{{/if}}">
+          {{> afFieldInput name="front" rows=6 placeholder="Question"}}
+          {{#if afFieldIsInvalid name="front"}}
+            <span class="help-block">{{afFieldMessage name="front"}}</span>
+          {{/if}}
+        </div>
+      </fieldset>
     </div>
-    <div class="form-group back hidden {{#if afFieldIsInvalid name='response1'}}has-error{{/if}}">
+
+    <!-- Back of card -->
+    <div class="back hidden">
       <h4>Card Back</h4>
-        {{> afFieldInput name="response1" type="text" placeholder="answer"}}
-        {{> afFieldInput name="response2" type="text" placeholder="response"}}
-        {{> afFieldInput name="response3" type="text" placeholder="response"}}
-        {{> afFieldInput name="response4" type="text" placeholder="response"}}
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
+      <fieldset>
+
+        <div class="form-group {{#if afFieldIsInvalid name='response1'}}has-error{{/if}}">
+          {{> afFieldInput name="response1" type="text" placeholder="Correct response"}}
+          {{#if afFieldIsInvalid name="response1"}}
+            <span class="help-block">{{afFieldMessage name="response1"}}</span>
+          {{/if}}
+        </div>
+
+        <div class="form-group {{#if afFieldIsInvalid name='response2'}}has-error{{/if}}">
+          {{> afFieldInput name="response2" type="text" placeholder="Possible response"}}
+          {{#if afFieldIsInvalid name="response2"}}
+            <span class="help-block">{{afFieldMessage name="response2"}}</span>
+          {{/if}}
+        </div>
+
+        <div class="form-group {{#if afFieldIsInvalid name='response3'}}has-error{{/if}}">
+          {{> afFieldInput name="response3" type="text" placeholder="Possible response"}}
+          {{#if afFieldIsInvalid name="response3"}}
+            <span class="help-block">{{afFieldMessage name="response3"}}</span>
+          {{/if}}
+        </div>
+
+        <div class="form-group {{#if afFieldIsInvalid name='response4'}}has-error{{/if}}">
+          {{> afFieldInput name="response4" type="text" placeholder="Possible response"}}
+          {{#if afFieldIsInvalid name="response4"}}
+            <span class="help-block">{{afFieldMessage name="response4"}}</span>
+          {{/if}}
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </fieldset>
     </div>
-  </fieldset>
+
   {{/autoForm}}
 </div>
 </template>

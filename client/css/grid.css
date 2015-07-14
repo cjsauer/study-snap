@@ -53,17 +53,6 @@ fieldset {
   font-size: 28px;
   padding: 40px 20px 10px;
 }
-.back > textarea {
-  height: 95px;
-}
-.back > .form-group {
-  min-height: 142px;
-}
-.back > .form-group > button {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
 .panel .btn i,.btn span{
   color:#666666;
 }
