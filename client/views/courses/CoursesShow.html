@@ -2,10 +2,21 @@
 <h1>{{title}} - {{university}}</h1>  
 <hr />
 <div class="container-fluid" id="main">
-  {{> Flashcard isNewFlashcard=true}}
 
-  <!-- flashcard output -->
-  {{> FlashcardsList}}
+  <div class="row">
+    {{> Leaderboard}}
+  </div>
+
+  <br />
+  <hr /> 
+
+  <div class="row">
+    <h2>Study the Flashcards</h2>
+    {{> Flashcard isNewFlashcard=true}}
+
+    <!-- flashcard output -->
+    {{> FlashcardsList}}
+  </div>
 
 </div> <!-- #main -->
 </template>
