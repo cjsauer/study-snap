@@ -5,3 +5,9 @@ Template.Leaderboard.helpers({
     return course.students;
   }
 });
+
+Template.LeaderboardEntry.helpers({
+  notMe: function(userId) {
+    return userId !== Meteor.userId();
+  }
+});

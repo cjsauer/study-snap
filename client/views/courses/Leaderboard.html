@@ -29,7 +29,9 @@
     <td>{{name}}</td>
     <td>{{score}}</td>
     <td>
-      <a class="btn btn-primary" href="#">Challenge!</a>
+      {{#if notMe this.id}}
+        <a class="btn btn-primary" href="#">Challenge!</a>
+      {{/if}}
     </td>
   </tr>
 </template>
