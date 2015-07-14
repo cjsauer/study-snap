@@ -26,14 +26,8 @@
 
 <template name="LeaderboardEntry">
   <tr>
-    <td>{{profile.name}}</td>
-    <td>
-      {{#if profile.score}}
-        {{profile.score}}
-      {{else}}
-        0
-      {{/if}}
-    </td>
+    <td>{{name}}</td>
+    <td>{{score}}</td>
     <td>
       <a class="btn btn-primary" href="#">Challenge!</a>
     </td>
