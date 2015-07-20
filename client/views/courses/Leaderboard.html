@@ -1,0 +1,37 @@
+<template name="Leaderboard">
+  <h2>Class Leaderboard</h2>
+
+  <div class="panel">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      {{#each students}}
+        {{> LeaderboardEntry}}
+      {{else}}
+        <tr>
+          <td colspan="3"><em>There are no students in this class!</em></td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<template name="LeaderboardEntry">
+  <tr>
+    <td>{{name}}</td>
+    <td>{{score}}</td>
+    <td>
+      {{#if notMe this.id}}
+        <a class="btn btn-primary" href="#">Challenge!</a>
+      {{/if}}
+    </td>
+  </tr>
+</template>

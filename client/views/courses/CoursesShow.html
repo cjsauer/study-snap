@@ -1,11 +1,31 @@
 <template name="CoursesShow">
 <h1>{{title}} - {{university}}</h1>  
+  {{#if currentUser}}
+    {{#if amStudent}}
+      <button type="button" class="btn btn-danger" id="leaveCourseButton">Leave class</button>
+    {{else}}
+      <button type="button" class="btn btn-primary" id="joinCourseButton">Join class</button>
+    {{/if}}
+  {{/if}}
 <hr />
 <div class="container-fluid" id="main">
-  {{> Flashcard isNewFlashcard=true}}
 
-  <!-- flashcard output -->
-  {{> FlashcardsList}}
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      {{> Leaderboard}}
+    </div>
+  </div>
+
+  <br />
+  <hr /> 
+
+  <div class="row">
+    <h2>Study the Flashcards</h2>
+    {{> Flashcard isNewFlashcard=true}}
+
+    <!-- flashcard output -->
+    {{> FlashcardsList}}
+  </div>
 
 </div> <!-- #main -->
 </template>
