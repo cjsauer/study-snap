@@ -1,6 +1,6 @@
 @media (max-width: 768px) {
   body {
-    padding-top:160px !important;
+    padding-top:110px !important;
     padding-bottom:40px !important;
   }
   #title {
@@ -13,5 +13,11 @@
   }
   #login-btn {
     width: 100% !important;
+  }
+  .navbar-nav {
+    margin: 0px !important;
+  }
+  .well {
+    width: 330px !important;
   }
 }
