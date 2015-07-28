@@ -1,4 +1,34 @@
-@media (max-width: 768px) {
+@media (max-width: 330px){
+  body {
+    padding-top:110px !important;
+    padding-bottom:40px !important;
+  }
+  #title {
+    width: 100% !important;
+    display: none !important;
+  }
+  #search {
+    width: 100% !important;
+    padding-top: 20px;
+  }
+  #login-btn {
+    width: 100% !important;
+  }
+  .navbar-nav {
+    margin: 0px !important;
+  }
+  .well {
+    width: 250px !important;
+  }
+  span.pull-left {
+    width: 50%;
+  }
+  span.pull-right {
+    width: 50%;
+    text-align: right;
+  }
+}
+@media (min-width: 331px) and (max-width: 768px) {
   body {
     padding-top:110px !important;
     padding-bottom:40px !important;
@@ -19,5 +49,12 @@
   }
   .well {
     width: 330px !important;
+  }
+  span.pull-left {
+    width: 50%;
+  }
+  span.pull-right {
+    width: 50%;
+    text-align: right;
   }
 }
