@@ -1,7 +1,9 @@
 Template.CoursesShow.helpers({
   amStudent: function() {
-    var course = Courses.find().fetch()[0];
-    return _.some(course.students, function(student) {
+    // Same error from issue #11. Current course is stored in this
+    //var course = Courses.find().fetch()[0];
+    console.log(this);
+    return _.some(this.students, function(student) {
       return student.id === Meteor.userId();
     });
   }
