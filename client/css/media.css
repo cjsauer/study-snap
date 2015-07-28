@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  body {
+    padding-top:160px !important;
+    padding-bottom:40px !important;
+  }
+  #title {
+    width: 100% !important;
+    display: none !important;
+  }
+  #search {
+    width: 100% !important;
+    padding-top: 20px;
+  }
+  #login-btn {
+    width: 100% !important;
+  }
+}
