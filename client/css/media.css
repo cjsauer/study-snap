@@ -4,12 +4,11 @@
     padding-bottom:40px !important;
   }
   #title {
-    width: 100% !important;
-    display: none !important;
+    width: 24% !important;
+    padding: 5px 10px 0px 0px;
   }
   #search {
-    width: 100% !important;
-    padding-top: 20px;
+    width: 75% !important;
   }
   #login-btn {
     width: 100% !important;
@@ -27,6 +26,10 @@
     width: 50%;
     text-align: right;
   }
+  .navbar-brand {
+    padding: 0px;
+    height: auto;
+  }
 }
 @media (min-width: 331px) and (max-width: 768px) {
   body {
@@ -34,12 +37,11 @@
     padding-bottom:40px !important;
   }
   #title {
-    width: 100% !important;
-    display: none !important;
+    width: 24% !important;
+    padding: 5px 10px 0px 0px;
   }
   #search {
-    width: 100% !important;
-    padding-top: 20px;
+    width: 75% !important;
   }
   #login-btn {
     width: 100% !important;
@@ -56,5 +58,9 @@
   span.pull-right {
     width: 50%;
     text-align: right;
+  }
+  .navbar-brand {
+    padding: 0px;
+    height: auto;
   }
 }
