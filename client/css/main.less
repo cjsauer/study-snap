@@ -1,26 +1,32 @@
 body {
-  padding-top: 50px;
+  padding-top: 70px;
 }
 
 .starter-template {
-  padding: 40px 15px;
   text-align: center;
 }
 
 #title a {
   font-size: 22px;
+  width: 100%;
+  text-align: right;
 }
 
-#title, #search {
+#title, #search, #login-btn {
   display: inline;
   float: left;
   vertical-align: middle;
 }
 
+#title {
+  width: 24%;
+}
 #search {
-  width: 70%;
-  vertical-align: middle;
+  width: 49%;
   margin: 10px 0px;
+}
+#login-btn {
+  width: 24%;
 }
 
 .list-group {
@@ -52,11 +58,13 @@ span .input-group-btn {
   color: white;
   font-size: 12px;
 }
-
 .-autocomplete-container {
   margin-top: 12px;
 }
 
 .-autocomplete-item {
-  height: 30px;
+  display: inline-block;
+  height: auto;
+  width: 100%;
+  height: auto;
 }
