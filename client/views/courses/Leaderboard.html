@@ -30,7 +30,7 @@
     <td>{{score}}</td>
     <td>
       {{#if notMe this.id}}
-        <a class="btn btn-primary" href="#">Challenge!</a>
+        <a class="btn btn-primary" href="{{ pathFor route='challenge.new' }}">Challenge!</a>
       {{/if}}
     </td>
   </tr>
