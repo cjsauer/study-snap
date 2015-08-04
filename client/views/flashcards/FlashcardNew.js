@@ -16,3 +16,10 @@ AutoForm.hooks({
     }
   }
 });
+
+Template.FlashcardNew.events({
+  "click #flashcard-submit": function(event, template) {
+    template.$('.front').toggleClass('hidden');
+    template.$('.back').toggleClass('hidden');
+  }
+});
