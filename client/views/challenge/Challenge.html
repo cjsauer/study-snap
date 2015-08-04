@@ -1,3 +1,15 @@
 <template name="Challenge">
-  
+  {{#each cards}}
+    {{> ChallengeQuestion}}
+  {{/each}}
 </template>
+
+<template name="ChallengeQuestion">
+  <h3>{{front}}</h3>
+  <!-- put responses here -->
+</template>
+
+<template name="Reponse">
+  
+</template>
+
