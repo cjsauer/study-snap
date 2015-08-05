@@ -14,6 +14,9 @@ AutoForm.hooks({
           return false;
         }
       }
+    },
+    onSuccess: function(formType, result) {
+      Router.go('courses.show', {_id: Router.current().params.course});
     }
   }
 });
@@ -26,9 +29,6 @@ Template.Challenge.helpers({
 Template.Challenge.events({
   "click #start-challenge": function(event, template){
     template.$('.challenge').toggleClass('hidden');
-  },
-  "click #submit-challenge": function(event, template){
-    Router.go('courses.show', {_id: Router.current().params.course});
   }
 });
 
