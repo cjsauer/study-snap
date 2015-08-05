@@ -5,8 +5,15 @@ AutoForm.hooks({
         var routerParams = Router.current().params;
         var course = routerParams && routerParams.course;
         var user = routerParams && routerParams._id;
+        
+        // Check that the challenge doesn't already exist
+        var challengeExists = Challenges.find({
+          challenger: Meteor.userId(),
+          course: course,
+          challengee: user
+        }).length > 0;
 
-        if(course && user) {
+        if(course && user && !challengeExists) {
           doc.challengee = Router.current().params._id;
           doc.course = Router.current().params.course;
           this.result(doc);
@@ -16,6 +23,9 @@ AutoForm.hooks({
       }
     },
     onSuccess: function(formType, result) {
+      Router.go('courses.show', {_id: Router.current().params.course});
+    },
+    onError: function(formType, result) {
       Router.go('courses.show', {_id: Router.current().params.course});
     }
   }

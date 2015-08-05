@@ -1,4 +1,5 @@
 Meteor.subscribe('courses');
+Meteor.subscribe('challenges');
 
 Template.navigation.helpers({
   autocompleteSettings: function() {
