@@ -1,3 +1,23 @@
+AutoForm.hooks({
+  'new-challenge': {
+    before: {
+      insert: function(doc) {
+        var routerParams = Router.current().params;
+        var course = routerParams && routerParams.course;
+        var user = routerParams && routerParams._id;
+
+        if(course && user) {
+          doc.challengee = Router.current().params._id;
+          doc.course = Router.current().params.course;
+          this.result(doc);
+        } else {
+          return false;
+        }
+      }
+    }
+  }
+});
+
 Template.Challenge.helpers({
   cards: function() {
     return _.sample(Flashcards.find().fetch(), 5);
@@ -6,6 +26,9 @@ Template.Challenge.helpers({
 Template.Challenge.events({
   "click #start-challenge": function(event, template){
     template.$('.challenge').toggleClass('hidden');
+  },
+  "click #submit-challenge": function(event, template){
+    Router.go('courses.show', {_id: Router.current().params.course});
   }
 });
 

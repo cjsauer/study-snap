@@ -8,9 +8,13 @@
       {{> ChallengeQuestion}}
     {{/each}}
     <hr />
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+    {{#autoForm id="new-challenge" type="insert" collection="Challenges"}}
+      <fieldset>
+        <div class="form-group">
+          <button type="submit" id="submit-challenge" class="btn btn-primary">Submit</button>
+        </div>
+      </fieldset>
+    {{/autoForm}}
 </div>
 </template>
 
