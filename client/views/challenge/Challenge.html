@@ -1,7 +1,13 @@
 <template name="Challenge">
-  {{#each cards}}
-    {{> ChallengeQuestion}}
-  {{/each}}
+  <div id="challenge">
+    {{#each cards}}
+      {{> ChallengeQuestion}}
+    {{/each}}
+    <hr />
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</div>
 </template>
 
 <template name="ChallengeQuestion">
