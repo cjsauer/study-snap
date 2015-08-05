@@ -1,9 +1,6 @@
 Template.Challenge.helpers({
   cards: function() {
     return _.sample(Flashcards.find().fetch(), 5);
-  },
-  response: function() {
-    _.shuffle([response1, response2, response3, response4]);
   }
 });
 Template.ChallengeQuestion.events({
@@ -13,13 +10,11 @@ Template.ChallengeQuestion.events({
     template.$(event.target).toggleClass('active');
   }
 });
-/*
 Template.ChallengeQuestion.helpers({
   response: function() {
-    _.shuffle([response1, response2, response3, response4]);
+    return _.shuffle([this.response1, this.response2, this.response3, this.response4]);
   }
 });
-*/
 /*
 var ul = document.querySelector('ul');
 for (var i = ul.children.length; i >= 0; i--) {

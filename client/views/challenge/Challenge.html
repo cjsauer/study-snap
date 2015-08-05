@@ -8,9 +8,12 @@
   <h3>{{front}}</h3>
   <!-- put responses here -->
   <div class="list-group">
-    <button type="button" class="list-group-item">{{response1}}</button>
-    <button type="button" class="list-group-item">{{response2}}</button>
-    <button type="button" class="list-group-item">{{response3}}</button>
-    <button type="button" class="list-group-item">{{response4}}</button>
+    {{#each response}}
+      {{> Response}}
+    {{/each}}
   </div>
+</template>
+
+<template name="Response">
+    <button type="button" class="list-group-item">{{this}}</button>
 </template>
