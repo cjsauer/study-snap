@@ -8,24 +8,22 @@ AutoForm.hooks({
         
         // Check that the challenge doesn't already exist
         var challengeExists = Challenges.find({
-          challenger: Meteor.userId(),
-          course: course,
-          challengee: user
-        }).length > 0;
+          challenger: Meteor.userId(), 
+          course: routerParams.course, 
+          challengee: routerParams._id
+        }).fetch().length > 0;
 
         if(course && user && !challengeExists) {
           doc.challengee = Router.current().params._id;
           doc.course = Router.current().params.course;
           this.result(doc);
         } else {
-          return false;
+          // Instead of returning false navigate back to the course page
+          return Router.go('courses.show', {_id: Router.current().params.course});
         }
       }
     },
     onSuccess: function(formType, result) {
-      Router.go('courses.show', {_id: Router.current().params.course});
-    },
-    onError: function(formType, result) {
       Router.go('courses.show', {_id: Router.current().params.course});
     }
   }
