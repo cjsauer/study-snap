@@ -3,6 +3,17 @@ Template.Challenge.helpers({
     return _.sample(Flashcards.find().fetch(), 5);
   }
 });
+Template.Challenge.events({
+  "click #start-challenge": function(event, template){
+    template.$('.challenge').toggleClass('hidden');
+  }
+});
+
+Template.ChallengeQuestion.helpers({
+  response: function() {
+    return _.shuffle([this.response1, this.response2, this.response3, this.response4]);
+  }
+});
 Template.ChallengeQuestion.events({
   "click .list-group-item": function(event, template){
     //template.$('.list-group-item').toggleClass('active');
@@ -10,14 +21,3 @@ Template.ChallengeQuestion.events({
     template.$(event.target).toggleClass('active');
   }
 });
-Template.ChallengeQuestion.helpers({
-  response: function() {
-    return _.shuffle([this.response1, this.response2, this.response3, this.response4]);
-  }
-});
-/*
-var ul = document.querySelector('ul');
-for (var i = ul.children.length; i >= 0; i--) {
-    ul.appendChild(ul.children[Math.random() * i | 0]);
-}
-*/

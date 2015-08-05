@@ -1,5 +1,9 @@
 <template name="Challenge">
-  <div id="challenge">
+  <div class="challenge">
+    <h2>Challenge!</h2>
+    <button type="button" id="start-challenge" class="btn btn-primary">Ready?</button>
+  </div>
+  <div class="challenge hidden">
     {{#each cards}}
       {{> ChallengeQuestion}}
     {{/each}}
