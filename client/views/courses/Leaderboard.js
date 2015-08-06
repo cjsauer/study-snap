@@ -18,6 +18,12 @@ Template.LeaderboardEntry.helpers({
   notMe: function(userId) {
     return userId !== Meteor.userId();
   },
+  myId: function() {
+    return Meteor.userId();
+  },
+  challengeWaiting: function(userId) {
+    return Challenges.findOne({"course": Router.current().params._id, "challenger": userId, "challengee": Meteor.userId()});
+  },
   ChallengeOrNotEnrolled: function(userId) {
     // check if a student is enrolled in the course
     var enrolled = _.find(Courses.findOne({"_id": Router.current().params._id}).students, function(student) { 
