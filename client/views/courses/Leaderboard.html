@@ -30,7 +30,7 @@
     <td>{{score}}</td>
     <td>
       {{#if notMe this.id}}
-      <a class="btn btn-primary {{#if noChallenge this.id}}disabled{{/if}}" href="{{ pathFor route='challenge' course=../_id _id=this.id }}">Challenge!</a>
+      <a class="btn btn-primary {{#if ChallengeOrNotEnrolled this.id}}disabled{{/if}}" href="{{ pathFor route='challenge' course=../_id _id=this.id }}">Challenge!</a>
       {{/if}}
     </td>
   </tr>
