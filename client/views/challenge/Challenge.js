@@ -37,6 +37,14 @@ Template.Challenge.helpers({
 Template.Challenge.events({
   "click #start-challenge": function(event, template){
     template.$('.challenge').toggleClass('hidden');
+  },
+  "click #submit-challenge": function(event, template){
+    // Score should be tallied and updated here!
+    Meteor.call('updateScore', Router.current().params.course, 10, function(err, result) {
+      if(err) {
+        console.error(err);
+      }
+    });
   }
 });
 
