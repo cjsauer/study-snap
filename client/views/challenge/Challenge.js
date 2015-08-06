@@ -13,6 +13,17 @@ AutoForm.hooks({
           challengee: routerParams._id
         }).fetch().length > 0;
 
+        // if the user has been challenged and is 
+        // removign the challenge from the collection after completing the challenge
+        if (user === Meteor.userId()) {
+          Meteor.call('removeChallengee', Meteor.userId(), Router.current().params.course, function(err, result) {
+            if (err) {
+              console.error(err);
+            }
+          });
+          return Router.go('courses.show', {_id: Router.current().params.course});
+        }
+
         if(course && user && !challengeExists) {
           doc.challengee = Router.current().params._id;
           doc.course = Router.current().params.course;
