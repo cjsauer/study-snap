@@ -17,6 +17,14 @@ AutoForm.hooks({
   }
 });
 
+Template.FlashcardNew.helpers({
+  userEnrolled: function() {
+    return _.find(Courses.findOne({"_id": Router.current().params._id}).students, function(student) { 
+      return student.id === Meteor.userId();
+    });
+  }
+});
+
 Template.FlashcardNew.events({
   "click #flashcard-submit": function(event, template) {
     template.$('.front').toggleClass('hidden');
