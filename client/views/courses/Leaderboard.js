@@ -17,5 +17,8 @@ Template.Leaderboard.helpers({
 Template.LeaderboardEntry.helpers({
   notMe: function(userId) {
     return userId !== Meteor.userId();
+  },
+  noChallenge: function(userId) {
+    return Challenges.findOne({"challenger": Meteor.userId(), "challengee": userId, "course": Router.current().params._id});
   }
 });
