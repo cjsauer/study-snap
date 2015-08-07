@@ -1,4 +1,4 @@
-@media (max-width: 330px){
+@media (max-width: 400px){
   body {
     padding-top:110px !important;
     padding-bottom:40px !important;
@@ -17,7 +17,8 @@
     margin: 0px !important;
   }
   .well {
-    width: 250px !important;
+    width: 100% !important;
+    margin: 10px 0px !important;
   }
   span.pull-left {
     width: 50%;
@@ -31,7 +32,7 @@
     height: auto;
   }
 }
-@media (min-width: 331px) and (max-width: 768px) {
+@media (min-width: 401px) and (max-width: 768px) {
   body {
     padding-top:110px !important;
     padding-bottom:40px !important;
