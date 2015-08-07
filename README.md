@@ -1,7 +1,7 @@
 # Study Snap
 
 ## Overview
-Stuy Snap is a prototype application built for the purpose of researching improvement to student effectiveness when exposed to interactive, collaborative, and competetive studying technology. At its heart, Study Snap is a community flashcard application with the ability to challenge friends in face-offs in the same vein as Trivia Crack. 
+Stuy Snap is a prototype application built for the purpose of researching improvement to student effectiveness when exposed to interactive, collaborative, and competetive studying technology. At its heart, Study Snap is a community flashcard application with the ability to challenge friends in face-offs in the same vein as Trivia Crack.
 
 ## Development Environment
 We are using Meteor as our platform of choice with Mongodb for storing data. To get setup, [download the box somewhere onto your computer](https://drive.google.com/open?id=0B2SSSb2bNGtaZnlJc3Y2cFlPcFk&authuser=0), and then run:
@@ -38,21 +38,8 @@ cd /vagrant
 meteor
 ```
 
-Note that the Meteor server automatically watches files for changes, recompiles them, and refreshes the browser. You are free to keep the server running while you develop from your host machine; the `/vagrant` directory is synced between the host and the VM. 
+Note that the Meteor server automatically watches files for changes, recompiles them, and refreshes the browser. You are free to keep the server running while you develop from your host machine; the `/vagrant` directory is synced between the host and the VM.
 
-Don't forget to eventually shutdown the VM. Log out of the VM, and run `vagrant halt` within the project directory. 
+Don't forget to eventually shutdown the VM. Log out of the VM, and run `vagrant halt` within the project directory.
 ## Windows users
-Windows users can boot up the box using the VirtualBox GUI tool. Just be sure to sync your working directory with a directoy on the VM e.g. `/vagrant` as above. Once provisioned, you should be able to log into the box and start the server as above.
-
-### Requirements
-- Git bash
-- Vagrant
-- VirtualBox
-- Patience
-
-### Fixing VirtualBox + Vagrant on Windows
-- Make sure to have Hyper-V disabled.
-- Add Git/bin to your path
-- Apply [this fix](https://github.com/mitchellh/vagrant/issues/713#issuecomment-17296765) to repair windows symlinks
-- the meteor.sh provisioning is not necessary if you have the meteor-shire.box file.
-- cd into /vagrant and `meteor run` that bad boy
+Meteor runs natively on Windows. It is best to just build it from the working directory.
