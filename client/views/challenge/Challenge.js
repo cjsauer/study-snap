@@ -67,6 +67,8 @@ Template.Challenge.events({
         console.error(err);
       }
     });
+
+    responses = [];
   }
 });
 
