@@ -1,3 +1,4 @@
+answers = {};
 responses = [];
 
 AutoForm.hooks({
@@ -52,29 +53,33 @@ Template.Challenge.events({
     template.$('.challenge').toggleClass('hidden');
   },
   "click #submit-challenge": function(event, template){
-    // Score should be tallied and updated here!
     var score = 0;
-    template.$('.active').each(function(index) {
-      if ($(this).text() === responses[index][0]){
-        score += 3;
-      } else {
-        score += 1;
-      }
+    template.$('.question').each(function(index) {
+      answers[responses[index]] = $(this).find('.active').text();
     });
 
+    /*
     Meteor.call('updateScore', Router.current().params.course, score, function(err, result) {
+      if(err) {
+        console.error(err);
+      }
+    });
+    */
+
+    Meteor.call('updateScore', Router.current().params.course, answers, function(err, result) {
       if(err) {
         console.error(err);
       }
     });
 
     responses = [];
+    answers = {};
   }
 });
 
 Template.ChallengeQuestion.helpers({
   response: function() {
-    responses.push([this.response1, this.response2, this.response3, this.response4]);
+    responses.push(this._id);
     return _.shuffle([this.response1, this.response2, this.response3, this.response4]);
   }
 });
