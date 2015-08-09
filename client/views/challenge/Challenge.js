@@ -58,14 +58,6 @@ Template.Challenge.events({
       answers[responses[index]] = $(this).find('.active').text();
     });
 
-    /*
-    Meteor.call('updateScore', Router.current().params.course, score, function(err, result) {
-      if(err) {
-        console.error(err);
-      }
-    });
-    */
-
     Meteor.call('updateScore', Router.current().params.course, answers, function(err, result) {
       if(err) {
         console.error(err);
