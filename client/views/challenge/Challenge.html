@@ -19,12 +19,14 @@
 </template>
 
 <template name="ChallengeQuestion">
-  <h3>{{front}}</h3>
-  <!-- put responses here -->
-  <div class="list-group">
-    {{#each response}}
-      {{> Response}}
-    {{/each}}
+  <div class="question">
+    <h3>{{front}}</h3>
+    <!-- put responses here -->
+    <div class="list-group">
+      {{#each response}}
+        {{> Response}}
+      {{/each}}
+    </div>
   </div>
 </template>
 
