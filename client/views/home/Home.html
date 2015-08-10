@@ -29,5 +29,5 @@
 </template>
 
 <template name="MyChallenge">
-  {{student}} challenged you!
+  <a class="btn btn-danger" href="{{ pathFor route='challenge' course=../_id _id=challengee }}">{{student}} challenged you!</a>
 </template>
