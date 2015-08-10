@@ -3,11 +3,22 @@
   <p class="lead">A competitive, engaging, and collaborative flashcard community.</p>
 
   <p><a href="{{pathFor route='courses.new'}}">Create a new course</a></p>
-  {{#each challenges}}
-    {{> MyChallenges}}
+  {{#each courses}}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{> MyCourse}}
+      </div>
+    </div>
   {{/each}}
 </template>
 
-<template name="MyChallenges">
- {{student}} challenged you on {{course}}.
+<template name="MyCourse">
+  <div class="panel-heading">{{title}}</div>
+  {{#each challenges _id}}
+    {{> MyChallenge}}
+  {{/each}}
+</template>
+
+<template name="MyChallenge">
+  {{student}} challenged you on {{course}}.
 </template>
