@@ -18,7 +18,7 @@ Template.MyCourse.helpers({
         return student.id === challenge.challenger;
       });
 
-      return {"student": challenger.name }; 
+      return {"name": challenger.name, "myId": Meteor.userId(), "courseId": courseId};
     });
   }
 });

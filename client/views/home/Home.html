@@ -2,7 +2,7 @@
   <h1>Study Snap</h1>
   <p class="lead">A competitive, engaging, and collaborative flashcard community.</p>
 
-  <p><a href="{{pathFor route='courses.new'}}">Create a new course</a></p>
+  <p><a class="btn btn-success" href="{{pathFor route='courses.new'}}">Create a new course</a></p>
   {{#each courses}}
     <div class="row">
       <div class="panel panel-default">
@@ -29,5 +29,5 @@
 </template>
 
 <template name="MyChallenge">
-  <a class="btn btn-danger" href="{{ pathFor route='challenge' course=../_id _id=challengee }}">{{student}} challenged you!</a>
+  <a class="btn btn-danger" href="{{ pathFor route='challenge' _id=myId course=courseId }}">{{name}} challenged you!</a>
 </template>
