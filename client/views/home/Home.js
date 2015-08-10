@@ -4,6 +4,11 @@ Template.Home.helpers({
   }
 });
 Template.MyCourse.helpers({
+  myScore: function() {
+    return _.find(this.students, function(student) {
+      return student.id === Meteor.userId();
+    }).score;
+  },
   challenges: function(courseId) {
     return _.map(Challenges.find({"challengee": Meteor.userId(), "course": courseId}).fetch(), function(challenge) { 
       var course = Courses.findOne({"_id": courseId});

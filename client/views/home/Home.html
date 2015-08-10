@@ -19,10 +19,12 @@
       <ul class="list-inline">
         {{#each challenges _id}}
           <li>{{> MyChallenge}}</li>
+        {{else}}
+          There are no pending challenges!
         {{/each}}
       </ul>
     </div>
-    <div class="my-course-score">Score</div>
+    <div class="my-course-score">{{myScore}}</div>
   </div>
 </template>
 
