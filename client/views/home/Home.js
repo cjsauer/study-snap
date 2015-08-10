@@ -5,9 +5,11 @@ Template.Home.helpers({
 });
 Template.MyCourse.helpers({
   myScore: function() {
-    return _.find(this.students, function(student) {
-      return student.id === Meteor.userId();
-    }).score;
+    if (Meteor.userId()) {
+      return _.find(this.students, function(student) {
+        return student.id === Meteor.userId();
+      }).score;
+    }
   },
   challenges: function(courseId) {
     return _.map(Challenges.find({"challengee": Meteor.userId(), "course": courseId}).fetch(), function(challenge) { 
@@ -16,7 +18,7 @@ Template.MyCourse.helpers({
         return student.id === challenge.challenger;
       });
 
-      return { "course": course.title, "student": challenger.name }; 
+      return {"student": challenger.name }; 
     });
   }
 });
