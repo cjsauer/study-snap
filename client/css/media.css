@@ -16,6 +16,9 @@
   .navbar-nav {
     margin: 0px !important;
   }
+  .row > .panel {
+    margin: 0 !important;
+  }
   .well {
     width: 100% !important;
     margin: 10px 0px !important;
@@ -49,6 +52,9 @@
   }
   .navbar-nav {
     margin: 0px !important;
+  }
+  .row > .panel {
+    margin: 0 5% !important;
   }
   .well {
     width: 330px !important;
