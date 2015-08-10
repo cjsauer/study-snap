@@ -13,13 +13,16 @@
 </template>
 
 <template name="MyCourse">
-  <div class="panel-heading">{{title}}</div>
   <div class="panel-body">
-    <ul class="list-inline">
-      {{#each challenges _id}}
-        <li>{{> MyChallenge}}</li>
-      {{/each}}
-    </ul>
+    <div class="my-course-title">{{title}}</div>
+    <div class="my-course-challenges">
+      <ul class="list-inline">
+        {{#each challenges _id}}
+          <li>{{> MyChallenge}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="my-course-score">Score</div>
   </div>
 </template>
 
