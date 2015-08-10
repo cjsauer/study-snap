@@ -1,3 +1,6 @@
+answers = {};
+responses = [];
+
 AutoForm.hooks({
   'new-challenge': {
     before: {
@@ -5,15 +8,15 @@ AutoForm.hooks({
         var routerParams = Router.current().params;
         var course = routerParams && routerParams.course;
         var user = routerParams && routerParams._id;
-        
+
         // Check that the challenge doesn't already exist
         var challengeExists = Challenges.find({
-          challenger: Meteor.userId(), 
-          course: routerParams.course, 
+          challenger: Meteor.userId(),
+          course: routerParams.course,
           challengee: routerParams._id
         }).fetch().length > 0;
 
-        // if the user has been challenged and is 
+        // if the user has been challenged and is
         // removign the challenge from the collection after completing the challenge
         if (user === Meteor.userId()) {
           Meteor.call('removeChallengee', Meteor.userId(), Router.current().params.course, function(err, result) {
@@ -50,17 +53,25 @@ Template.Challenge.events({
     template.$('.challenge').toggleClass('hidden');
   },
   "click #submit-challenge": function(event, template){
-    // Score should be tallied and updated here!
-    Meteor.call('updateScore', Router.current().params.course, 10, function(err, result) {
+    var score = 0;
+    template.$('.question').each(function(index) {
+      answers[responses[index]] = $(this).find('.active').text();
+    });
+
+    Meteor.call('updateScore', Router.current().params.course, answers, function(err, result) {
       if(err) {
         console.error(err);
       }
     });
+
+    responses = [];
+    answers = {};
   }
 });
 
 Template.ChallengeQuestion.helpers({
   response: function() {
+    responses.push(this._id);
     return _.shuffle([this.response1, this.response2, this.response3, this.response4]);
   }
 });
