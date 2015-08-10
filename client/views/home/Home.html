@@ -4,19 +4,23 @@
 
   <p><a href="{{pathFor route='courses.new'}}">Create a new course</a></p>
   {{#each courses}}
-    <div class="panel panel-default">
-      <div class="panel-body">
+    <div class="row">
+      <div class="panel panel-default">
         {{> MyCourse}}
-      </div>
-    </div>
+      </div> <!-- .panel -->
+    </div> <!-- .row -->
   {{/each}}
 </template>
 
 <template name="MyCourse">
   <div class="panel-heading">{{title}}</div>
-  {{#each challenges _id}}
-    {{> MyChallenge}}
-  {{/each}}
+  <div class="panel-body">
+    <ul class="list-inline">
+      {{#each challenges _id}}
+        <li>{{> MyChallenge}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>
 
 <template name="MyChallenge">
