@@ -5,15 +5,13 @@ Template.Home.helpers({
 });
 Template.MyCourse.helpers({
   challenges: function(courseId) {
-    return _.map(Challenges.find({"challengee": Meteor.userId()}).fetch(), function(challenge) { 
+    return _.map(Challenges.find({"challengee": Meteor.userId(), "course": courseId}).fetch(), function(challenge) { 
       var course = Courses.findOne({"_id": courseId});
-      console.log(course);
-      return {
-        "course": course.title, 
-        "student": _.find(course.students, function(student) { 
-          return student.id === challenge.challenger
-        }).name
-      }; 
+      var challenger = _.find(course.students, function(student) { 
+        return student.id === challenge.challenger;
+      });
+
+      return { "course": course.title, "student": challenger.name }; 
     });
   }
 });
