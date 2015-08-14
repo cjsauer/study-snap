@@ -1,0 +1,33 @@
+<template name="Home">
+  <h1>Study Snap</h1>
+  <p class="lead">A competitive, engaging, and collaborative flashcard community.</p>
+
+  <p><a class="btn btn-success" href="{{pathFor route='courses.new'}}">Create a new course</a></p>
+  {{#each courses}}
+    <div class="row home">
+      <div class="panel panel-default">
+        {{> MyCourse}}
+      </div> <!-- .panel -->
+    </div> <!-- .row -->
+  {{/each}}
+</template>
+
+<template name="MyCourse">
+  <div class="panel-body">
+    <div class="my-course-title">{{title}}</div>
+    <div class="my-course-challenges">
+      <ul class="list-inline">
+        {{#each challenges _id}}
+          <li>{{> MyChallenge}}</li>
+        {{else}}
+          <li>There are no pending challenges!</li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="my-course-score">{{myScore}}</div>
+  </div>
+</template>
+
+<template name="MyChallenge">
+  <a class="btn btn-danger" href="{{ pathFor route='challenge' _id=myId course=courseId }}">{{name}} challenged you!</a>
+</template>
