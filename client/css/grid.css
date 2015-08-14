@@ -66,7 +66,7 @@ fieldset {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-.well > .form {
+.well > .input-group > .form {
   padding: 0px 10px;
 }
 .card-header {
@@ -74,6 +74,10 @@ fieldset {
   position: relative;
   font-weight:400;
   font-size:15px;
+}
+.card-header > button {
+  background-color: transparent;
+  border-color: transparent;
 }
 .card-body {
   width: 100%;

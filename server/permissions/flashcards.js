@@ -8,6 +8,6 @@ Flashcards.allow({
   },
 
   remove: function(userId, doc) {
-    return false;
+    return Roles.userIsInRole(userId, 'user') && (doc.creator === userId || Courses.findOne({"_id": doc.course}).creator === userId);
   }
 });

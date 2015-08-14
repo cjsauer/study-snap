@@ -4,3 +4,12 @@ Template.Flashcard.events({
     template.$('.back').toggleClass('hidden');
   }
 });
+
+Template.Flashcard.helpers({
+  beforeRemove: function(collection, id) {
+    var doc = collection.findOne(id);
+    if (confirm('Really delete "' + doc.front + '"?')) {
+      this.remove();
+    }
+  }
+});

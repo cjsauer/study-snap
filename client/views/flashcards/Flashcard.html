@@ -17,6 +17,7 @@
 
 <template name="CardHeader">
   <div class="card-header">
+    {{#quickRemoveButton collection="Flashcards" _id=this._id onError=onError beforeRemove=beforeRemove class="pull-left"}}<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>{{/quickRemoveButton}}
     <a class="flip pull-right" href="#">Flip card</a>
   </div>
 </template>
