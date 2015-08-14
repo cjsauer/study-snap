@@ -51,7 +51,7 @@ fieldset {
 }
 .well > .front, .well > .back {
   font-size: 28px;
-  padding: 40px 20px 10px;
+  padding: 10px 20px 10px;
 }
 .panel .btn i,.btn span{
   color:#666666;
@@ -66,13 +66,20 @@ fieldset {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-.well .well-heading a {
-  font-weight:400;
-  font-size:11px;
-}
 .well > .form {
   padding: 0px 10px;
 }
+.card-header {
+  width: 100%;
+  position: relative;
+  font-weight:400;
+  font-size:15px;
+}
+.card-body {
+  width: 100%;
+  display: inline-block;
+}
+
 .panel .panel-heading {
   background-color:#ffffff;
   font-weight:700;
