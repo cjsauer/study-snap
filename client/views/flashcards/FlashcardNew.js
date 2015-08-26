@@ -29,5 +29,9 @@ Template.FlashcardNew.events({
   "click #flashcard-submit": function(event, template) {
     template.$('.front').toggleClass('hidden');
     template.$('.back').toggleClass('hidden');
+  },
+  "click .flip": function(event, template) {
+    template.$('.front').toggleClass('hidden');
+    template.$('.back').toggleClass('hidden');
   }
 });

@@ -5,3 +5,6 @@
 # VM
 .vagrant/
 Vagrantfile
+
+# Tern
+.tern-project
