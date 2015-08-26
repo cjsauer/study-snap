@@ -3,10 +3,12 @@ Template.Flashcard.onRendered(function() {
 });
 
 Template.Flashcard.helpers({
-  beforeRemove: function(collection, id) {
-    var doc = collection.findOne(id);
-    if (confirm('Really delete "' + doc.front + '"?')) {
-      this.remove();
+  beforeRemove: function() {
+    return function(collection, id) {
+      var doc = collection.findOne(id);
+      if (confirm('Really delete "' + doc.front + '"?')) {
+        this.remove();
+      }
     }
   },
   courseOrCardOwner: function() {

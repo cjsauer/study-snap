@@ -3,7 +3,7 @@
     <div class="front">
       <div class="card-header">
         {{#if courseOrCardOwner }}
-          {{#quickRemoveButton collection="Flashcards" _id=this._id onError=onError beforeRemove=beforeRemove class="pull-left"}}<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>{{/quickRemoveButton}}
+          {{#quickRemoveButton collection="Flashcards" _id=this._id beforeRemove=beforeRemove class="pull-left"}}<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>{{/quickRemoveButton}}
         {{/if}}
         <!--<a class="flip pull-right" href="#">Flip card</a>-->
       </div>
