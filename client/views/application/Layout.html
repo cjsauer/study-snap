@@ -1,19 +1,19 @@
 <head>
   <title>Study Snap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js">-->
-  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"></script>
 </head>
 
 <template name="Layout">
 
-{{> navigation }}
+  {{> navigation }}
 
-<div class="container-fluid">
-  <div class="starter-template">
+  <div class="container-fluid">
+    <div class="starter-template">
 
-    {{> yield}}
+      {{> yield}}
 
-  </div>
-</div><!-- .container -->
+    </div>
+  </div><!-- .container -->
 </template>
