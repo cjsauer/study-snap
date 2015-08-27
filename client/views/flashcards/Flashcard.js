@@ -9,7 +9,7 @@ Template.Flashcard.helpers({
       if (confirm('Really delete "' + doc.front + '"?')) {
         this.remove();
       }
-    }
+    };
   },
   courseOrCardOwner: function() {
     return this.creator === Meteor.userId() || Courses.findOne({"_id": this.courseID}).creator === Meteor.userId();
