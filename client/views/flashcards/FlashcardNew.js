@@ -25,13 +25,12 @@ Template.FlashcardNew.helpers({
   }
 });
 
-Template.FlashcardNew.events({
-  "click #flashcard-submit": function(event, template) {
-    template.$('.front').toggleClass('hidden');
-    template.$('.back').toggleClass('hidden');
-  },
-  "click .flip": function(event, template) {
-    template.$('.front').toggleClass('hidden');
-    template.$('.back').toggleClass('hidden');
-  }
+Template.FlashcardNew.onRendered(function() {
+  $("#cardform").flip({
+    trigger: 'manual'
+  });
+
+  $(".flip, #flashcard-submit").click(function() {
+    $("#cardform").flip('toggle');
+  });
 });

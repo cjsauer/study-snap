@@ -68,13 +68,20 @@ fieldset {
 .well > .input-group > .form {
   padding: 0px 10px;
 }
-.card-header {
-  width: 100%;
+.flip {
+  /*width: 100%;*/
   position: relative;
   font-weight:400;
   font-size:15px;
+  margin: 10px 0;
 }
-.card-header > button {
+.front > fieldset, .back > fieldset {
+  display: inline-block;
+  width: 80%;
+}
+.delete-button {
+  font-weight:400;
+  font-size:15px;
   background-color: transparent;
   border-color: transparent;
 }
@@ -118,11 +125,7 @@ h3,h4,h5 {
 .well {
   background-color: transparent;
 }
-#new-card .well {
-  background: url("/img/notecard-rule.gif") top left repeat;
-}
-.card > .front, .card > .back {
-  padding: 30px;
+#cardform > .front, #cardform > .back, .card > .front, .card > .back {
   background: url("/img/notecard-rule.gif") top left repeat;
 }
 
