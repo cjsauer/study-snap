@@ -1,12 +1,9 @@
 <template name="Flashcard">
   <div class="well card">
     <div class="front">
-      <div class="card-header">
-        {{#if courseOrCardOwner }}
-          {{#quickRemoveButton collection="Flashcards" _id=this._id beforeRemove=beforeRemove class="pull-left"}}<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>{{/quickRemoveButton}}
-        {{/if}}
-        <!--<a class="flip pull-right" href="#">Flip card</a>-->
-      </div>
+      {{#if courseOrCardOwner }}
+        {{#quickRemoveButton collection="Flashcards" _id=this._id beforeRemove=beforeRemove class="delete-button pull-left"}}<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>{{/quickRemoveButton}}
+      {{/if}}
       <div class="card-body">
         {{front}}
       </div>
