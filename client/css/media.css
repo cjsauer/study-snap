@@ -19,7 +19,7 @@
   .row > .panel {
     margin: 0 !important;
   }
-  .well {
+  .well, .input-group{
     width: 100% !important;
     margin: 10px 0px !important;
   }
