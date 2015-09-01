@@ -8,6 +8,7 @@ Accounts.onCreateUser(function(options, user) {
   user.roles = {};
   user.roles[Roles.GLOBAL_GROUP] = ['user'];
 
+  /*
   // The remaining code will attach multiple services to users
   // This may only work for google and facebook
   var service;
@@ -48,6 +49,7 @@ Accounts.onCreateUser(function(options, user) {
       user.profile.name = user.services[service].name;
     }
   }
+  */
 
   return user;
 });
