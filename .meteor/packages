@@ -19,3 +19,4 @@ csauer:accounts-phony
 mizzao:autocomplete
 accounts-google
 aldeed:delete-button
+force-ssl
